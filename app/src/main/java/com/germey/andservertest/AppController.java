@@ -15,10 +15,10 @@ import java.util.Map;
 public class AppController {
 
     @GetMapping("/encrypt")
-    public JSONObject login(@QueryParam("plaintext") String plaintext,
+    public JSONObject login(@QueryParam("string") String string,
                             @QueryParam("offset") int offset) {
         Map<String, String> map = new HashMap<>();
-        String sign = NativeUtils.encrypt(plaintext, offset);
+        String sign = NativeUtils.encrypt(string, offset);
         map.put("sign", sign);
         return new JSONObject(map);
     }
