@@ -7,6 +7,6 @@ public class NativeUtils {
         System.loadLibrary("native");
     }
 
-    public static native String encrypt(String plaintext, int offset);
+    public static native String encrypt(String str, int offset);
 
 }
